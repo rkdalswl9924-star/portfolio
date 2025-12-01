@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designer Portfolio</title>
+  <meta name="description" content="디자이너 포트폴리오 사이트입니다.">
+
+  <!-- 파비콘 및 아이콘 설정 -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <style>
+    /* 기본 스타일 (기존 style.css의 핵심 내용과 포트폴리오 스타일을 통합했습니다)
+    */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #222222;
+      --accent-color: #0056b3;
+      --gray-light: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      line-height: 1.5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 유틸리티 */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .text-center { text-align: center; }
+    .hidden { display: none; }
+
+    /* 헤더 & 네비게이션 */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #666;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* 히어로 섹션 (메인 소개) */
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      background-color: var(--gray-light);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* 포트폴리오 그리드 */
+    .portfolio {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 250px;
+      background-color: #ddd; /* 이미지 없을 때 회색 배경 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 { margin: 0 0 10px 0; }
+    .card p { margin: 0; color: #666; font-size: 0.9rem; }
+
+    /* 푸터 */
+    footer {
+      background: #333;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer a { color: #fff; text-decoration: underline; }
+
+    /* 모바일 대응 */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">My Portfolio</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 메인 소개 (Hero) -->
+<section id="about" class="hero">
+  <div class="container">
+    <h1>안녕하세요,<br>디자이너 OOO입니다.</h1>
+    <p>사용자 경험을 디자인하고 문제를 해결하는 크리에이티브 디자이너입니다.</p>
+  </div>
+</section>
+
+<!-- 작업물 (Work) -->
+<section id="work" class="portfolio">
+  <div class="container">
+    <h2 class="section-title">Selected Works</h2>
+    <div class="grid">
+      <!-- 작업물 1 -->
+      <article class="card">
+        <div class="card-image">
+          <!-- 이미지가 있다면 아래 src에 경로를 입력하세요 -->
+          <!-- <img src="images/project1.jpg" alt="프로젝트 1"> -->
+          <span>Project Image 1</span>
+        </div>
+        <div class="card-content">
+          <h3>브랜드 아이덴티티 디자인</h3>
+          <p>Logo, Stationery, Guide</p>
+        </div>
+      </article>
+
+      <!-- 작업물 2 -->
+      <article class="card">
+        <div class="card-image">
+          <span>Project Image 2</span>
+        </div>
+        <div class="card-content">
+          <h3>웹사이트 리뉴얼</h3>
+          <p>UI/UX Design, Web Publishing</p>
+        </div>
+      </article>
+
+      <!-- 작업물 3 -->
+      <article class="card">
+        <div class="card-image">
+          <span>Project Image 3</span>
+        </div>
+        <div class="card-content">
+          <h3>모바일 앱 디자인</h3>
+          <p>App Interface, Prototyping</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer id="contact">
+  <div class="container">
+    <p>&copy; 2024 My Name. All rights reserved.</p>
+    <p>Contact: <a href="mailto:email@example.com">email@example.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // 간단한 스크립트 (필요한 경우 여기에 추가)
+  console.log('Portfolio loaded successfully!');
+</script>
+
+</body>
+</html>
